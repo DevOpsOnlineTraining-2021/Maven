@@ -1,0 +1,153 @@
+Day-1:
+
+Maven: Java build tool
+
+	compile the source code
+	compile and run the unit test cases
+	code quality check
+	packaging the compiled source code (*.jar, *.war, *.ear)
+	deploy/upload the package to target server (package/repository manager - nexus)
+
+===============================================
+
+Day-2:
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=Addition -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+C:\MyWorkspace\DevOpsPractice\maven\Addition>tree /F
+Folder PATH listing for volume Windows-SSD
+Volume serial number is E4D2-EDC9
+C:.
+│   pom.xml
+│
+└───src
+    ├───main
+    │   └───java
+    │       └───com
+    │           └───mycompany
+    │               └───app
+    │                       App.java
+    │
+    └───test
+        └───java
+            └───com
+                └───mycompany
+                    └───app
+                            AppTest.java
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=Multiplication -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+3 types of repos: to download/refer the depenedent libraries
+
+	1. maven central - https://repo.maven.apache.org/maven2
+
+	2. maven local repo - <userPath>/.m2/repository
+
+	3. remote repo : nexus/Artifactory
+
+maven local repo >> maven central repo >> remote repo
+
+
+
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar (153 kB at 340 kB/s)
+
+===============================================
+
+Day-3:
+
+maven build lifecycle pahses
+
+clean - to remove target folder
+
+validate
+compile
+	- resources (src/main/resources)
+	- compile  (src/main/java)
+test
+	- testResources (src/test/resources)
+	- testCompile (src/test/java)
+	- test - run the test cases i.e., run the test compiled class files
+package (*.jar, *.war, *.ear, *.zip)
+verify  - verify the package whether its meet the quality with Java standards
+install (copy the package to local maven repo)
+depoly (nexus)
+
+	credentials in settings.xml
+	taregt nexus repo details in pom.xml
+
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ Addition ---
+[INFO] Installing C:\MyWorkspace\DevOpsPractice\maven\Addition\target\Addition-1.0.0-SNAPSHOT.jar 
+
+C:\Users\svnde\.m2\repository\com\devops\calculator\addition\Addition\1.0.0-SNAPSHOT\Addition-1.0.0-SNAPSHOT.jar
+
+<userPath>/.m2/repository
+
+[INFO] Installing C:\MyWorkspace\DevOpsPractice\maven\Addition\pom.xml to C:\Users\svnde\.m2\repository\com\devops\calculator\addition\Addition\1.0.0-SNAPSHOT\Addition-1.0.0-SNAPSHOT.pom
+[INFO] 
+
+C:\MyWorkspace\DevOpsPractice\maven\Addition\target
+
+===============================================
+
+Day4:
+
+compile java file
+run java file
+
+nexus setup
+
+maven life cycle phases (install, deploy)
+
+clean
+
+validate
+compile
+	- resources (src/main/resources)
+	- compile  (src/main/java)
+test
+	- testResources (src/test/resources)
+	- testCompile (src/test/java)
+	- test - run the test cases i.e., run the test compiled class files
+package
+verify
+install
+depoly (nexus)
+
+	configure creds in maven settings.xml
+	configure <distributionManagement> section in project pom.xml
+
+
+mvn clean install
+mvn clean deploy (to nexus repository)
+
+mvn clean package
+run the package
+
+-----------------------
+
+Day-5: nexus
+
+nexus porxy repository (maven mirror)
+
+nexus hosted repository (maven repos)
+
+release and snapshot repos
+
+	versioning 
+	
+		release 4.0.0 (without -SNAPSHOT)
+		snapshot 1.0.0-SNAPSHOT
+	
+
+blocking the maven central repo (maven settings.xml) - Downloading from central: https://repo.maven.apache.org/maven2
+
+
+Uploading to deployment: http://54.226.8.227:8081/nexus/content/repositories/my-release-repo/com/devops/calculator/addition/Addition/4.0.0/Addition-4.0.0.jar
+Uploaded to deployment: http://54.226.8.227:8081/nexus/content/repositories/my-release-repo/com/devops/calculator/addition/Addition/4.0.0/Addition-4.0.0.jar (4.1 kB at 2.0 kB/s)
+Uploading to deployment: http://54.226.8.227:8081/nexus/content/repositories/my-release-repo/com/devops/calculator/addition/Addition/4.0.0/Addition-4.0.0.pom
+Uploaded to deployment: http://54.226.8.227:8081/nexus/content/repositories/my-release-repo/com/devops/calculator/addition/Addition/4.0.0/Addition-4.0.0.pom (1.6 kB at 705 B/s)
+D
+
+4.2.0-SNAPSHOT - development version
+4.2.0		   - release version

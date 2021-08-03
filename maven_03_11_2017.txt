@@ -1,0 +1,120 @@
+
+A. Maven Setup: MavenSetup.docx
+
+B. About Maven: 
+
+Maven is an automated build tool. The major advantages of Maven are : 3
+
+1. The project setup tool: Where to keep the code.
+
+	https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
+	src/
+	src/main/java/*.java --> Original code
+	src/main/resources/ *.xml, *.txt, *.properties
+
+	src/test/java/*Test*.java --> Test cases code
+	src/test/resources/ *.xml, *.txt, *.properties
+
+	Types of packages supports by java or maven or any Application Servers
+
+	1. Utility proejcts: jar : maven-archetype-quickstart : mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.devops.app -DartifactId=SampleJar 
+	2. Web project: war      : maven-archetype-webapp
+	3. enterprise applications: ear : maven-archetype-j2ee-simple
+	4. zip
+
+	Run the command "mvn archetype:generate" to see all the available archetypes (there are 1900+ maven archetypes are available).
+
+2. Automated Build Tool: Build script in pom.xml.
+
+	2.1. Maven Life Cycle phases: default, clean, site.
+		2.1.1. default or build lifecycle.
+				validate
+				compile
+				test
+				package
+				verify
+				install
+				deploy
+		2.1.2. clean
+		2.1.3. site
+		Refer for basic knowledge : maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+		Refer for complete knowledge (after maven course completed) : https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+	2.2. Important elements/tags in POM.xml file. POM stands for Project Object Model)
+	<project>
+		Maven info:
+			1. <modelVersion>
+		Project Info:
+			2. <groupId>
+			3. <artifactId>
+			4. <version>
+			5. <packaging> : jar, war, ear, pom etc
+			6. <name>
+			7. <description>
+		Properties:
+			8. <properties> (how to pass a value to the particular property from command line)
+		Repositories info:
+			9. <repositories>
+			10. <pluginRepositories>
+			11. <distributedManagement>
+		Build section:
+			12. <build>
+				12.1. <plugins>
+				12.2. <pluginManagement>
+
+				a. Execute the plugin with fully qualified name : Ex: <groupId>:<artifactId>:<version>:<goal>
+					Ex:  org.apache.maven.plugins:maven-checkstyle-plugin:2.17:checkstyle
+				b. alias : <pluginsAlias>:<goal> ex: checkstyle:checkstyle
+				c. configure the plugin in pom file by specifying the lifecycle phase.
+
+		Dependencies info:
+			13. <dependencies>
+			14. <dependencyManagement>
+		Profiles: Refer: http://maven.apache.org/guides/introduction/introduction-to-profiles.html
+			15. <profiles>
+					Case-1. Checkstyle plugin should NOT run in every build. i.e., run the checkstyle whenever we want. then go to profiles concept.
+							Command: mvn clean install -P <profileName>
+					Case-2.	Enable checketyle , make sure it should run in everybuild --> Don't remove profile, just active the progile by default. 
+							<activation>
+								<activeByDefault>true</activeByDefault>
+							</activation>
+					Case-3. Active my profile based on environment or OS (operating system)
+							ex: Profile should run only on windows machines.
+							<activation>
+								<os>
+									<family>windows</family> <!-- possible other vaules: Linux, unix, !windows, !linux -->
+								</os>
+							</activation>
+					Case-4. Release my project based on state (for ap release the proejct with 1.0.0 version, for ts release the project with 2.0.0)
+							<activation>
+								<property>
+									<name>state</name>
+									<value>ap</value>
+								</property>
+							</activation>
+							ex: setup profiles for different test environments.
+							<activation>
+								<property>
+									<name>environment</name>
+									<value>devint</value>
+								</property>
+							</activation>
+
+							<activation>
+								<property>
+									<name>environment</name>
+									<value>system</value>
+								</property>
+							</activation>
+		Multi projects:
+			16. <modules>
+	2.3. Parent & Child pom files (i.e., inheritance).
+			2.3.1. Single project.
+			2.3.2. Multiple projects.
+
+3. Repository Management (Managing Artifacts): Local --> Central --> Remote Repositories.
+	3.1. Local Repo.
+	3.2. Central Maven repo.
+	3.3. Remote repo or artifact repository ( JFrog artifactory OR nexus etc)
+

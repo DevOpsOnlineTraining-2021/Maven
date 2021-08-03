@@ -18,5 +18,8 @@ Maven - Day2 - topics need to be covered
                         Run the package: java -jar target/<packageName>.jar
                 4.3. Build the CalculatorApp project with & without "Addition", "Subtraction" as dependencies.  
                         mvn goals: mvn package
-                        Run the package: java -jar target/<packageName>.jar        
+                        Run the package: java -jar target/<packageName>.jar
+                        
+                        
+    
     

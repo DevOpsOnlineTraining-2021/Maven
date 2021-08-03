@@ -9,7 +9,7 @@ Maven - Day1 - Course
 
         3. Major advantages of maven?
 
-                3.1. Project Management tool. (auto generate the file/folder structure).                
+                3.1. Project Setup & management tool. (auto generate the file/folder structure).                
                         
                 3.2. Automated Build tool. - lifecycle phases
                 

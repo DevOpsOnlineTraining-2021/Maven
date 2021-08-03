@@ -1,0 +1,94 @@
+Basic Concepts in Maven:
+------------------------
+
+1. About maven.
+
+2. Setup a maven project.
+
+3. Maven life cycle phases & Important tags in pom.xml file.
+
+4. Maven plugins configuration in pom.xml.
+
+5. Dependencies.
+
+6. Properties.
+
+7. Profiles.
+
+8. Repositories (with Nexus).
+
+Advanced Concepts in Maven:
+---------------------------
+
+9. Full concept of repositories with Nexus.
+
+10. Maven multi projects (modules).
+
+11. Parent & child pom. (pluginManagement, dependencyManagement).
+
+12. Full concept of dependencies Management. i.e., Different scopes, optional dependency , dependency exclusions.
+
+13. Important plugins. i.e., checkstyle, Jacoco, findbugs, pmd, sonar, maven versions plugin, maven dependency plugin, Maven release plugin.
+
+14. What's next to Maven? - Gradle (Basic Idea)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Total 8 days course
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Day1: Concepts
+-----
+
+1. About maven.
+
+2. Setup a maven project.
+
+Day2: Concepts
+-----
+
+3. Maven life cycle phases.
+
+Day3: Concepts
+-----
+
+4. Maven plugins configuration in pom.xml.
+
+5. Dependencies.
+
+6. Properties.
+
+Day4: Concepts
+-----
+
+7. Profiles.
+
+8. Repositories (with Nexus).
+
+Day5: Concepts
+-----
+
+9. Full concept of repositories with Nexus.
+
+10. Full concept of dependencies Management. i.e., Different scopes, optional dependency , dependency exclusions.
+
+
+Day6: Concepts
+-----
+
+9. Full concept of repositories with Nexus.
+
+10. Maven multi projects (modules).
+
+Day7: Concepts
+-----
+
+11. Parent & child pom. (pluginManagement, dependencyManagement).
+
+12. Full concept of dependencies Management. i.e., Different scopes, optional dependency , dependency exclusions.
+
+Day8: Concepts
+-----
+
+13. Important plugins. i.e., checkstyle, Jacoco, findbugs, pmd, sonar, maven versions plugin, maven dependency plugin, Maven release plugin.
+
+14. What's next to Maven? - Gradle (Basic Idea)
