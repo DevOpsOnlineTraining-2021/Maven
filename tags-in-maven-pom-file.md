@@ -2,7 +2,7 @@
 
     <project>
 
-        everthing we have to configure under this tag
+        everything we have to configure under this tag
 
     </project>
 
