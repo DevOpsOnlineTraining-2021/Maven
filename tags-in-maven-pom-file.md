@@ -66,7 +66,7 @@
   
 ### distributionManagement section - to upload the maven build artifacts to repository manager (Sonatype Nexus or Jforg artifactory)
 
-See the sample one: https://github.com/CalculatorApps/Addition/blob/master/pom.xml
+	See the sample one: https://github.com/CalculatorApps/Addition/blob/master/pom.xml
 
 	<distributionManagement>
 		<repository>
@@ -82,7 +82,9 @@ See the sample one: https://github.com/CalculatorApps/Addition/blob/master/pom.x
 	</distributionManagement>
   
 
-### repository - see sample one https://github.com/DevOpsOnlineTraining-2021/Maven/blob/master/settings-repo-and-pluginRepo.xml
+### repositories
+
+	see sample one https://github.com/DevOpsOnlineTraining-2021/Maven/blob/master/settings-repo-and-pluginRepo.xml
 
     <repositories>
         <repository>
@@ -100,7 +102,9 @@ See the sample one: https://github.com/CalculatorApps/Addition/blob/master/pom.x
     </repositories>
 
 
-### pluginRepositories - see sample one https://github.com/DevOpsOnlineTraining-2021/Maven/blob/master/settings-repo-and-pluginRepo.xml
+### pluginRepositories
+
+	see sample one https://github.com/DevOpsOnlineTraining-2021/Maven/blob/master/settings-repo-and-pluginRepo.xml
 
     <pluginRepositories>
         <pluginRepository>
